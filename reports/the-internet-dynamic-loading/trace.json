@@ -1,0 +1,53 @@
+{
+  "finished_at": "2026-10-31 20:21:55",
+  "model": "openai/gpt-oss-120b",
+  "status": "done",
+  "summary": "The final text displayed is \"Hello World!\"",
+  "evidence": "Hello World!",
+  "verified": true,
+  "notes": [],
+  "steps": [
+    {
+      "n": 1,
+      "url": "https://the-internet.herokuapp.com/dynamic_loading/2",
+      "title": "The Internet",
+      "thought": "Click Start to begin loading the hidden element",
+      "action": "click",
+      "args": {
+        "id": 1
+      },
+      "result": "clicked [1] Start",
+      "changed": true,
+      "screenshot": "reports\\the-internet-dynamic-loading\\01-step1.png",
+      "error": null
+    },
+    {
+      "n": 2,
+      "url": "https://the-internet.herokuapp.com/dynamic_loading/2",
+      "title": "The Internet",
+      "thought": "The page indicates loading is in progress; need to wait for content to appear",
+      "action": "wait",
+      "args": {
+        "seconds": 3
+      },
+      "result": "waited 3s",
+      "changed": true,
+      "screenshot": "reports\\the-internet-dynamic-loading\\02-step2.png",
+      "error": null
+    },
+    {
+      "n": 3,
+      "url": "https://the-internet.herokuapp.com/dynamic_loading/2",
+      "title": "The Internet",
+      "thought": "The loading has finished and the page now shows the final text",
+      "action": "done",
+      "args": {
+        "result": "The final text displayed is \"Hello World!\""
+      },
+      "result": "The final text displayed is \"Hello World!\"",
+      "changed": null,
+      "screenshot": "reports\\the-internet-dynamic-loading\\03-step3.png",
+      "error": null
+    }
+  ]
+}

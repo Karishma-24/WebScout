@@ -1,0 +1,47 @@
+{
+  "_comment": "Target tasks for the batch runner. This is the ONLY file allowed to name specific sites: the agent itself must never contain site-specific logic. 'expect' is the outcome a correct, honest agent should reach.",
+  "tasks": [
+    {
+      "id": "saucedemo-cheapest-checkout",
+      "goal": "Log in as standard_user with the password secret_sauce. Find the cheapest product, add only that one to the cart, and complete the checkout using the name Ada Lovelace and postal code 12345. Tell me the product you bought, its price, and the confirmation message shown at the end.",
+      "url": "https://www.saucedemo.com",
+      "expect": "done",
+      "why": "A long multi-step flow: login, compare prices, cart, a three-page checkout form, and a confirmation to quote as evidence."
+    },
+    {
+      "id": "saucedemo-locked-out",
+      "goal": "Log in as locked_out_user with the password secret_sauce and add any product to the cart.",
+      "url": "https://www.saucedemo.com",
+      "expect": "blocked",
+      "why": "The account is locked. The honest answer is to report the error banner, never to retry forever or invent a result."
+    },
+    {
+      "id": "the-internet-login",
+      "goal": "Log in with the username tomsmith and the password SuperSecretPassword!, then tell me the confirmation message shown on the page you land on.",
+      "url": "https://the-internet.herokuapp.com/login",
+      "expect": "done",
+      "why": "A plain form login on a site with a flash-message banner to quote as evidence."
+    },
+    {
+      "id": "the-internet-dynamic-loading",
+      "goal": "Start the loading process on this page and tell me the text that finally appears once it has finished.",
+      "url": "https://the-internet.herokuapp.com/dynamic_loading/2",
+      "expect": "done",
+      "why": "The target element does not exist until after an async load, so the agent has to wait and re-observe rather than give up."
+    },
+    {
+      "id": "the-internet-inputs",
+      "goal": "Type the number 1234 into the number field on this page, then tell me what value the field holds afterwards.",
+      "url": "https://the-internet.herokuapp.com/inputs",
+      "expect": "done",
+      "why": "A single unlabelled input: tests that the agent reads back the real field value as evidence instead of assuming its typing worked."
+    },
+    {
+      "id": "wikipedia-search-extract",
+      "goal": "Search for the Playwright browser automation framework and tell me which company originally developed it and what programming language it was first released for.",
+      "url": "https://www.wikipedia.org",
+      "expect": "done",
+      "why": "Search, follow a result, and extract two specific facts from a long article: a site the agent has no special knowledge of."
+    }
+  ]
+}

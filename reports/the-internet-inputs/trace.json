@@ -1,0 +1,40 @@
+{
+  "finished_at": "2026-10-31 20:22:23",
+  "model": "openai/gpt-oss-120b",
+  "status": "done",
+  "summary": "The number field holds the value 1234.",
+  "evidence": "value=\"1234\"",
+  "verified": true,
+  "notes": [],
+  "steps": [
+    {
+      "n": 1,
+      "url": "https://the-internet.herokuapp.com/inputs",
+      "title": "The Internet",
+      "thought": "type the required number into the number input field",
+      "action": "type",
+      "args": {
+        "id": 1,
+        "text": "1234"
+      },
+      "result": "typed \"1234\" into [1] element",
+      "changed": true,
+      "screenshot": "reports\\the-internet-inputs\\01-step1.png",
+      "error": null
+    },
+    {
+      "n": 2,
+      "url": "https://the-internet.herokuapp.com/inputs",
+      "title": "The Internet",
+      "thought": "The input now shows value 1234, so we can finish",
+      "action": "done",
+      "args": {
+        "result": "The number field holds the value 1234."
+      },
+      "result": "The number field holds the value 1234.",
+      "changed": null,
+      "screenshot": "reports\\the-internet-inputs\\02-step2.png",
+      "error": null
+    }
+  ]
+}
